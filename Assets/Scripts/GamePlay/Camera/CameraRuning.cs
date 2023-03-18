@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Camera
+namespace CameraDev
 {
     internal class CameraRuning : MonoBehaviour
     {

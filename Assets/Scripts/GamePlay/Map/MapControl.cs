@@ -6,35 +6,55 @@ namespace Map
 {
     internal class MapControl : MonoBehaviour
     {
-        IEnvironmentPainterFactory _environmentPainterFactory;
-        List<EnvironmentPainter> _painters = new List<EnvironmentPainter>();
+        public static MapControl Instance;
+        [SerializeField] List<SegmentEnvironment> segmentEnvironments;
 
         private void Awake()
         {
-            _environmentPainterFactory = new EnvironmenPanitertFactory();
+            Instance = this;
         }
+
         private void Start()
         {
-
-            EnvironmentPainter painter = _environmentPainterFactory.CreateEnvironmentPainter(1);
-            painter.CreateEnvironment(new EnvironmentTransform(0,0,Vector3.zero));
-            _painters.Add(painter);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
-            CreateEnvironment(1);
+            foreach(SegmentEnvironment env in segmentEnvironments)
+            {
+                env.CreateSegment();
+            }
+            SetPosition();
         }
 
-        void CreateEnvironment(int random)
+        IEnumerator Spawn()
         {
-            EnvironmentPainter painter = _environmentPainterFactory.CreateEnvironmentPainter(random);
-            painter.CreateEnvironment(_painters[_painters.Count - 1].NextTransform);
-            _painters.Add(painter);
+            while (true)
+            {
+                yield return new WaitForSeconds(2);
+                SegmentEnvironment first = segmentEnvironments[0];
+                segmentEnvironments.RemoveAt(0);
+                first.TurnOn(segmentEnvironments[segmentEnvironments.Count - 1].NextStartSegment);
+                segmentEnvironments.Add(first);
+
+            }
         }
+
+        public void SpawnNext(EnvironmentTransform environmentTransform)
+        {
+            if(segmentEnvironments[segmentEnvironments.Count - 1].NextStartSegment.y - environmentTransform.y < 8)
+            {
+                SegmentEnvironment first = segmentEnvironments[0];
+                segmentEnvironments.RemoveAt(0);
+                first.TurnOn(segmentEnvironments[segmentEnvironments.Count - 1].NextStartSegment);
+                segmentEnvironments.Add(first);
+            }
+        }
+
+        void SetPosition()
+        {
+            segmentEnvironments[0].TurnOn(new EnvironmentTransform(0, 0, Vector3.zero));
+            for(int i =1; i< segmentEnvironments.Count; i++)
+            {
+                segmentEnvironments[i].TurnOn(segmentEnvironments[i - 1].NextStartSegment);
+            }
+        }
+
     }
 }

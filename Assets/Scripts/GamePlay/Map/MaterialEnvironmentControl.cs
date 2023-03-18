@@ -8,8 +8,8 @@ namespace Map
         public static MaterialEnvironmentControl Intanse;
         [SerializeField] Transform _groupEnvironment;
         [SerializeField] List<Environment> _environmentPrefabs;
-        [SerializeField] float _environmentSize = 1f;
-        [SerializeField] float _spaceEnvironment = 0.1f;
+        [SerializeField] float _environmentSize;
+        [SerializeField] float _spaceEnvironment;
 
         private void Awake()
         {
@@ -18,7 +18,8 @@ namespace Map
 
         private Environment TakeEnvironmentMaterial(TypeEnvironment type)
         {
-            return _environmentPrefabs.Find(x => x.GetTypeEnvironment() == type);
+            Environment env = _environmentPrefabs.Find(x => x.GetTypeEnvironment() == type);
+            return env;
         }
 
         public Environment CreateEnvironment(EnvironmentTransform spawnPos,TypeEnvironment type)
@@ -26,11 +27,19 @@ namespace Map
             Environment environment = Instantiate(TakeEnvironmentMaterial(type),_groupEnvironment);
             environment.SetSize(_environmentSize);
             environment.SetCurrentPosition(spawnPos);
-            environment.SetNextPosition(GetNextEnvironmentTransformCow(spawnPos));
+            environment.SetNextPosition(GetNextEnvironmentTransformCol(spawnPos));
             return environment;
         }
 
-        public EnvironmentTransform GetNextEnvironmentTransformCow(EnvironmentTransform currenPosion)
+        public Environment CreateEnvironment(TypeEnvironment type)
+        {
+            Environment environment = Instantiate(TakeEnvironmentMaterial(type), _groupEnvironment);
+            environment.SetSize(_environmentSize);
+            environment.gameObject.SetActive(false);
+            return environment;
+        }
+
+        public EnvironmentTransform GetNextEnvironmentTransformCol(EnvironmentTransform currenPosion)
         {
             return new EnvironmentTransform(currenPosion.x + 1, currenPosion.y, currenPosion.position + Vector3.right * (_environmentSize + _spaceEnvironment));
         }
