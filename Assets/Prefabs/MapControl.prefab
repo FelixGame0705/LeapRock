@@ -49,7 +49,8 @@ MonoBehaviour:
   - {fileID: 5019772532824009435, guid: 33dc0fc61eb050a4ea53cbee6cf898b4, type: 3}
   - {fileID: 1258490471898154195, guid: e06b9179c0f38ae40b95c9969f6c2afd, type: 3}
   _environmentSize: 1
-  _spaceEnvironment: 0.1
+  _spaceEnvironmentCol: 0.1
+  _spaceEnvironmentRow: 0.1
 --- !u!1 &1422990482133439371
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SegmentEnvironmentTemplate: {fileID: 11400000, guid: a2e28268c1004f0459df32781590fafc, type: 2}
+  _sizeSegment: {x: 4, y: 5}
 --- !u!1 &2576522174899526823
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SegmentEnvironmentTemplate: {fileID: 11400000, guid: d24479b919091fa40995593d65520381, type: 2}
+  _sizeSegment: {x: 4, y: 5}
 --- !u!1 &4856606726347003984
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SegmentEnvironmentTemplate: {fileID: 11400000, guid: 0a7f57c2cdf46f5428c42c366e2fa4b7, type: 2}
+  _sizeSegment: {x: 4, y: 5}
 --- !u!1 &6624559761833419598
 GameObject:
   m_ObjectHideFlags: 0

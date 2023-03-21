@@ -9,7 +9,8 @@ namespace Map
         [SerializeField] Transform _groupEnvironment;
         [SerializeField] List<Environment> _environmentPrefabs;
         [SerializeField] float _environmentSize;
-        [SerializeField] float _spaceEnvironment;
+        [SerializeField] float _spaceEnvironmentCol;
+        [SerializeField] float _spaceEnvironmentRow;
 
         private void Awake()
         {
@@ -41,12 +42,12 @@ namespace Map
 
         public EnvironmentTransform GetNextEnvironmentTransformCol(EnvironmentTransform currenPosion)
         {
-            return new EnvironmentTransform(currenPosion.x + 1, currenPosion.y, currenPosion.position + Vector3.right * (_environmentSize + _spaceEnvironment));
+            return new EnvironmentTransform(currenPosion.x + 1, currenPosion.y, currenPosion.position + Vector3.right * (_environmentSize + _spaceEnvironmentCol));
         }
 
         public EnvironmentTransform GetNextEnvironmentTransformRow(EnvironmentTransform currenPosion)
         {
-            return new EnvironmentTransform(currenPosion.x , currenPosion.y+1, currenPosion.position + Vector3.forward * (_environmentSize + _spaceEnvironment));
+            return new EnvironmentTransform(currenPosion.x , currenPosion.y+1, currenPosion.position + Vector3.forward * (_environmentSize + _spaceEnvironmentRow));
         }
     }
 }

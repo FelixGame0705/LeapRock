@@ -5,11 +5,12 @@ namespace Character
     internal class CharacterControl : MonoBehaviour
     {
         EnvironmentTransform _currentTransForm;
-        public void SetPosition(EnvironmentTransform transform)
+        public void SetPosition(EnvironmentTransform nextEnvironment)
         {
-            this.transform.position = transform.position+Vector3.up;
-            _currentTransForm = transform;
-            MapControl.Instance.SpawnNext(transform);
+            if (!CheckJumb(nextEnvironment)) return;
+            this.transform.position = nextEnvironment.position+Vector3.up;
+            _currentTransForm = nextEnvironment;
+            MapControl.Instance.SpawnNext(nextEnvironment);
         }
         private void Update()
         {
@@ -24,6 +25,12 @@ namespace Character
                     if(env) SetPosition(env.GetCurrentPosition());
                 }
             }
+        }
+
+        private bool CheckJumb(EnvironmentTransform transform)
+        {
+            return Mathf.Abs(_currentTransForm.x - transform.x) <= 2
+                && Mathf.Abs(_currentTransForm.y - transform.y) == 1;
         }
     }
 }

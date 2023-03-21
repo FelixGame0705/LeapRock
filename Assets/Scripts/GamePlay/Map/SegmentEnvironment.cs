@@ -8,55 +8,68 @@ namespace Map
     internal class SegmentEnvironment : MonoBehaviour
     {
         [SerializeField] SegmentEnvironmentTemplate SegmentEnvironmentTemplate;
-        List<Environment> environments;
-        List<EnvironmentTransform> transformEnvironment;
+        [SerializeField] Vector2Int _sizeSegment; 
+        List<Environment> _environments;
+        List<EnvironmentTransform> _transformEnvironment;
         public EnvironmentTransform StartSegment { get; private set; }
         public EnvironmentTransform NextStartSegment { get; private set; }
-
-        const int Col = 4;
-        const int Row = 5;
         public void CreateSegment()
         {
-            environments = new List<Environment>();
-            transformEnvironment = new List<EnvironmentTransform>();
+            if(CheckSizeSegment() == false)
+            {
+                Debug.LogError("Khong cung so luong");
+                return;
+            }
+            _environments = new List<Environment>();
+            _transformEnvironment = new List<EnvironmentTransform>();
             foreach (var typeEvinronment in SegmentEnvironmentTemplate.typeEnvironments)
             {
                 Environment env = MaterialEnvironmentControl.Intanse.CreateEnvironment(typeEvinronment);
-                environments.Add(env);
+                _environments.Add(env);
             }
         }
 
         public void TurnOn(EnvironmentTransform startTransform) 
         {
+            SetPosition(startTransform);
+            for (int i=0; i< _transformEnvironment.Count; i++)
+            {
+                _environments[i].SetCurrentPosition(_transformEnvironment[i]);
+                _environments[i].gameObject.SetActive(true);
+            }
+        }
+
+        public void TurnOff()
+        {
+            for (int i = 0; i < _transformEnvironment.Count; i++)
+            {
+                _environments[i].gameObject.SetActive(false);
+            }
+        }
+
+        private void SetPosition(EnvironmentTransform startTransform)
+        {
             EnvironmentTransform nextOnCol = startTransform;
             EnvironmentTransform nextOnRow = startTransform;
-            transformEnvironment.Clear();
-            for (int i = 0; i < Row; i++)
+            _transformEnvironment.Clear();
+            for (int i = 0; i < _sizeSegment.y; i++)
             {
-                transformEnvironment.Add(nextOnRow);
-                for (int j=0; j< Col-1; j++)
+                _transformEnvironment.Add(nextOnRow);
+                for (int j = 0; j < _sizeSegment.x - 1; j++)
                 {
                     nextOnCol = MaterialEnvironmentControl.Intanse.GetNextEnvironmentTransformCol(nextOnCol);
-                    transformEnvironment.Add(nextOnCol);
+                    _transformEnvironment.Add(nextOnCol);
                 }
                 nextOnRow = MaterialEnvironmentControl.Intanse.GetNextEnvironmentTransformRow(nextOnRow);
                 nextOnCol = nextOnRow;
             }
             StartSegment = startTransform;
             NextStartSegment = nextOnRow;
-            for(int i=0; i< transformEnvironment.Count; i++)
-            {
-                environments[i].SetCurrentPosition(transformEnvironment[i]);
-                environments[i].gameObject.SetActive(true);
-            }
         }
 
-        public void TurnOff()
+        private bool CheckSizeSegment()
         {
-            for (int i = 0; i < transformEnvironment.Count; i++)
-            {
-                environments[i].gameObject.SetActive(false);
-            }
+            return _sizeSegment.x * _sizeSegment.y == SegmentEnvironmentTemplate.typeEnvironments.Count;
         }
     }
 
