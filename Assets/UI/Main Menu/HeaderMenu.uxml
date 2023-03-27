@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/UI/Main%20Menu/menustyle.uss?fileID=7433441132597879392&amp;guid=4f6b9a973c6b20f4da5c69a581f1a5c0&amp;type=3#menustyle" />
+    <ui:VisualElement name="header" class="header">
+        <ui:VisualElement name="currencybar" class="currencybar">
+            <ui:VisualElement name="diamond" class="diamondgroup">
+                <ui:VisualElement name="diamondiconpic" class="icon" style="background-image: url(&apos;project://database/Assets/Sprites/UI/MainMenu/diamondicon.png?fileID=2800000&amp;guid=a64b8719388bc2a4199e34c8166067ad&amp;type=3#diamondicon&apos;);" />
+                <ui:Label name="diamond_earn" text="999" display-tooltip-when-elided="true" class="currentnum" style="color: rgb(17, 17, 17);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="gold" class="goldgroup">
+                <ui:VisualElement name="goldiconpic" class="icon" style="background-image: url(&apos;project://database/Assets/Sprites/UI/MainMenu/moneyicon.png?fileID=2800000&amp;guid=fcf17486dc515304793d38d2ab0ada41&amp;type=3#moneyicon&apos;);" />
+                <ui:Label name="gold_earn" text="999" display-tooltip-when-elided="true" class="currentnum" style="color: rgb(17, 17, 17);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button display-tooltip-when-elided="true" name="setting_btn" class="settingbutton" style="flex-direction: row; overflow: visible; left: 8%; background-image: url(&apos;project://database/Assets/Sprites/UI/MainMenu/setting_icon.png?fileID=2800000&amp;guid=0415917e1ea148c438b41deb40179d57&amp;type=3#setting_icon&apos;); width: 10%;" />
+    </ui:VisualElement>
+</ui:UXML>
