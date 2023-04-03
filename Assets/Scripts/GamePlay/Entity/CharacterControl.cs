@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Map;
-namespace Character
+namespace Entity
 {
     internal class CharacterControl : MonoBehaviour
     {
