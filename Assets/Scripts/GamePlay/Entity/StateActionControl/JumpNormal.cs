@@ -49,13 +49,14 @@ namespace Entity
                 none = transform.position;
                 x = 0;
                 isSetupValue = false;
+                //Debug.Log(transform.position + " And " + nextPosition);
             }
         }
 
         void OnEndJump()
         {
             transformComponent.SetCurrentTransform(transformComponent.GetNextTransform());
-            Map.MapControl.Instance.SpawnNext(transformComponent._currentTrainform);
+            Map.MapControl.Instance.SpawnNext(transformComponent._currentTransform);
             isSetupValue = true;
             action.Invoke();
         }

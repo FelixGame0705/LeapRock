@@ -57,7 +57,7 @@ namespace Map
                 _transformEnvironment.Add(nextOnRow);
                 for (int j = 0; j < _sizeSegment.x - 1; j++)
                 {
-                    nextOnCol = MaterialEnvironmentControl.Intanse.GetNextEnvironmentTransformCol(nextOnCol);
+                    nextOnCol = MaterialEnvironmentControl.Intanse.GetNextEnvironmentTransformColRight(nextOnCol);
                     _transformEnvironment.Add(nextOnCol);
                 }
                 nextOnRow = MaterialEnvironmentControl.Intanse.GetNextEnvironmentTransformRow(nextOnRow);
@@ -71,6 +71,8 @@ namespace Map
         {
             return _sizeSegment.x * _sizeSegment.y == SegmentEnvironmentTemplate.typeEnvironments.Count;
         }
+
+        public Vector2Int GetSizeSegment() => _sizeSegment;
     }
 
 }

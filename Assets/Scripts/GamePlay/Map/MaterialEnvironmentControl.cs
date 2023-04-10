@@ -28,7 +28,7 @@ namespace Map
             Environment environment = Instantiate(TakeEnvironmentMaterial(type),_groupEnvironment);
             environment.SetSize(_environmentSize);
             environment.SetCurrentPosition(spawnPos);
-            environment.SetNextPosition(GetNextEnvironmentTransformCol(spawnPos));
+            environment.SetNextPosition(GetNextEnvironmentTransformColRight(spawnPos));
             return environment;
         }
 
@@ -40,9 +40,14 @@ namespace Map
             return environment;
         }
 
-        public EnvironmentTransform GetNextEnvironmentTransformCol(EnvironmentTransform currenPosion)
+        public EnvironmentTransform GetNextEnvironmentTransformColRight(EnvironmentTransform currenPosion)
         {
             return new EnvironmentTransform(currenPosion.x + 1, currenPosion.y, currenPosion.position + Vector3.right * (_environmentSize + _spaceEnvironmentCol));
+        }
+
+        public EnvironmentTransform GetNextEnvironmentTransformColLeft(EnvironmentTransform currentPosition)
+        {
+            return new EnvironmentTransform(currentPosition.x - 1, currentPosition.y, currentPosition.position + Vector3.left * (_environmentSize + _spaceEnvironmentCol));
         }
 
         public EnvironmentTransform GetNextEnvironmentTransformRow(EnvironmentTransform currenPosion)

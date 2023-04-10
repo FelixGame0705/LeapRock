@@ -9,8 +9,8 @@ namespace Character
         }
         private void Start()
         {
-            _currentTrainform = Map.MaterialEnvironmentControl.Intanse.GetNextEnvironmentTransformCol(_currentTrainform);
-            this.transform.position = _currentTrainform.position + UnityEngine.Vector3.up;
+            _currentTransform = Map.MaterialEnvironmentControl.Intanse.GetNextEnvironmentTransformColRight(_currentTransform);
+            this.transform.position = _currentTransform.position + UnityEngine.Vector3.up;
         }
     }
 }
