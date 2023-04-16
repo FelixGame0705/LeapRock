@@ -28,7 +28,7 @@ public class SaveArea : MonoBehaviour
     {
         var safeArea = Screen.safeArea;
         
-
+        
         try
         {
             var leftTop = RuntimePanelUtils.ScreenToPanel(temp.panel,

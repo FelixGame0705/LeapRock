@@ -1,0 +1,14 @@
+.option_btn {
+    width: 140px;
+    height: 29px;
+    background-color: rgb(217, 217, 217);
+    -unity-font-definition: url('project://database/Assets/Fonts/joystix%20monospace%20SDF.asset?fileID=11400000&guid=09ab74d9780481d448d9e630989ec770&type=2#joystix monospace SDF');
+    color: rgb(56, 56, 56);
+}
+
+.levericon {
+    width: 21px;
+    height: 45px;
+    margin-left: 18px;
+    background-color: rgb(166, 157, 135);
+}

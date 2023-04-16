@@ -2,8 +2,8 @@
     <ui:Template name="HeaderMenu" src="project://database/Assets/UI/Main%20Menu/HeaderMenu.uxml?fileID=9197481963319205126&amp;guid=90dfe3da6a1421f4683e385a6e810d8a&amp;type=3#HeaderMenu" />
     <ui:Template name="BodyMenu" src="project://database/Assets/UI/Main%20Menu/BodyMenu.uxml?fileID=9197481963319205126&amp;guid=908503df5d8ed844c86e3ee48903012d&amp;type=3#BodyMenu" />
     <Style src="project://database/Assets/UI/Main%20Menu/menustyle.uss?fileID=7433441132597879392&amp;guid=4f6b9a973c6b20f4da5c69a581f1a5c0&amp;type=3#menustyle" />
-    <ui:VisualElement name="savearea" class="saveareastyle">
+    <ui:VisualElement name="savearea" class="saveareastyle" style="align-items: center; justify-content: flex-start; background-color: rgba(18, 224, 216, 255);">
         <ui:Instance template="HeaderMenu" name="HeaderMenu" style="height: 10%;" />
-        <ui:Instance template="BodyMenu" name="BodyMenu" style="height: 60%;" />
+        <ui:Instance template="BodyMenu" name="BodyMenu" />
     </ui:VisualElement>
 </ui:UXML>

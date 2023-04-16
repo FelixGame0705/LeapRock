@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/UI/Shop/shopstyle.uss?fileID=7433441132597879392&amp;guid=f25e10d0c0351724eb0434e193027712&amp;type=3#shopstyle" />
+    <ui:VisualElement name="item_container" style="align-items: flex-end; width: 365px;">
+        <ui:VisualElement style="width: 365px; height: 79px; background-color: rgb(217, 217, 217); flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-items: center;">
+            <ui:VisualElement name="icon" style="width: 65px; height: 65px; border-top-left-radius: 32.5px; border-bottom-left-radius: 32.5px; border-top-right-radius: 32.5px; border-bottom-right-radius: 32.5px; background-color: rgb(56, 56, 56); margin-left: 12px; background-image: none;" />
+            <ui:VisualElement name="levelup_container" style="width: 100%; height: 100%; flex-direction: row; align-items: center;">
+                <ui:VisualElement name="first_level" class="levericon" />
+                <ui:VisualElement name="second_level" class="levericon" />
+                <ui:VisualElement name="third_level" class="levericon" />
+                <ui:VisualElement name="fourth_level" class="levericon" />
+                <ui:VisualElement name="fifth_level" class="levericon" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="width: 146px; height: 47px; color: rgb(56, 56, 56); background-color: rgb(248, 201, 130);">
+            <ui:VisualElement style="position: absolute; width: 100%; height: 100%; flex-direction: row-reverse; align-items: center; justify-content: flex-start; top: 0; left: 1px;">
+                <ui:VisualElement style="border-top-left-radius: 23px; border-bottom-left-radius: 23px; border-top-right-radius: 23px; border-bottom-right-radius: 23px; width: 46px; height: 46px; background-color: rgb(5, 192, 42);" />
+                <ui:Label text="11" display-tooltip-when-elided="true" name="prize" style="width: 63px; height: 21px; font-size: 30px; -unity-text-align: upper-center; -unity-font-definition: url(&apos;project://database/Assets/Fonts/joystix%20monospace%20SDF.asset?fileID=11400000&amp;guid=09ab74d9780481d448d9e630989ec770&amp;type=2#joystix monospace SDF&apos;);" />
+            </ui:VisualElement>
+            <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" style="border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); visibility: hidden; flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
