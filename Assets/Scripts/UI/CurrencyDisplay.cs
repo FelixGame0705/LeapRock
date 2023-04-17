@@ -1,3 +1,4 @@
+using Assets.Scripts.UI.MainMenu;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,25 +8,28 @@ using UnityEngine.UI;
 public class CurrencyDisplay : MonoBehaviour
 {
 
-    [SerializeField] private Text displayUI;
+    [SerializeField] private GameObject diamondObject;
+    [SerializeField] private GameObject goldObject;
+    private Text diamondDisplay;
+    private Text goldDisplay;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-       displayUI = GetComponent<Text>();
+       diamondDisplay = diamondObject.GetComponent<Text>();
+       goldDisplay = goldObject.GetComponent<Text>();
        clearUI();
     }
 
     public void clearUI()
     {
-        displayUI.text = "0000";
+        diamondDisplay.text = "0000";
+        goldDisplay.text = "0000";
     }
     // Update is called once per frame
-    public void updateTextUI(int price)
+    public void UpdateUI(int gold, int diamond)
     {
-        double temp = price / 10000.0;
-        if( temp > 1)
-        {
-            displayUI.text = temp.ToString() + "N$";
-        }
+        clearUI();
+        diamondDisplay.text = diamond.ToString();
+        goldDisplay.text = gold.ToString(); 
     }
 }

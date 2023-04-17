@@ -2,10 +2,10 @@
 
 public enum Stage
 {
-    None,
-    MainMenu,
-    Setting,
-    Shop,
-    OpenChest,
-    InGame
+    EXIT,
+    MAINMENU,
+    SETTING,
+    SHOP,
+    GACHA,
+    INGAME
 }

@@ -13,27 +13,17 @@ namespace Assets.Scripts
 {
     public class DataReader<T>
     {
-        public void saveToJSON(Queue<T> dataList, string filename)
+        public void saveToJSON(T data, string filename)
         {
-            List<T> data = new List<T>();
-            while(dataList.Count > 0)
-            {
-                data.Add(dataList.Dequeue());
-            }
             string content = JsonUtility.ToJson(data);
             writeFile(GetPath(filename), content);
         }
 
-        public Queue<T> loadFromJSON(string filename)
+        public T loadFromJSON(string filename)
         {
-            Queue<T> data = new Queue<T>();
             string content = loadFile(GetPath(filename));
-            List<T> temp = JsonUtility.FromJson<List<T>>(content);
-            foreach (T item in temp)
-            {
-                data.Enqueue(item);
-            }
-            return data;
+            T temp = JsonUtility.FromJson<T>(content);
+            return temp;
         }
 
         private string GetPath(string filename)

@@ -1,4 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/UI/Main%20Menu/menustyle.uss?fileID=7433441132597879392&amp;guid=4f6b9a973c6b20f4da5c69a581f1a5c0&amp;type=3#menustyle" />
-    <ui:ListView focusable="true" virtualization-method="DynamicHeight" show-border="false" name="treasure_list" horizontal-scrolling="false" style="width: 465px; height: 115px; background-color: rgb(196, 196, 196); flex-grow: 1; flex-shrink: 0;" />
-</ui:UXML>

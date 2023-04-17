@@ -1,9 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/UI/Main%20Menu/menustyle.uss?fileID=7433441132597879392&amp;guid=4f6b9a973c6b20f4da5c69a581f1a5c0&amp;type=3#menustyle" />
-    <ui:VisualElement name="Item" style="width: 93px; height: 92px;">
-        <ui:VisualElement name="outline" style="position: absolute; top: 5px; flex-grow: 0; width: 100%; height: 100%; background-color: rgb(248, 201, 130); border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
-            <ui:Button display-tooltip-when-elided="true" name="treasure_claim" style="flex-grow: 1; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-left-color: rgba(162, 162, 162, 0); border-right-color: rgba(162, 162, 162, 0); border-top-color: rgba(162, 162, 162, 0); border-bottom-color: rgba(162, 162, 162, 0); background-color: rgb(56, 56, 56);" />
-        </ui:VisualElement>
-        <ui:Label text="5:00 PM" display-tooltip-when-elided="true" name="time" style="height: 10px; -unity-text-align: upper-center; -unity-font-definition: url(&apos;project://database/Assets/Fonts/joystix%20monospace%20SDF.asset?fileID=11400000&amp;guid=09ab74d9780481d448d9e630989ec770&amp;type=2#joystix monospace SDF&apos;);" />
-    </ui:VisualElement>
-</ui:UXML>
