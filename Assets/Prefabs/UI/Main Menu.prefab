@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 3544149407050677064}
   - component: {fileID: 3544149407050677065}
   m_Layer: 5
-  m_Name: Shop
+  m_Name: ShopBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +883,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3544149407050677064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 132373095}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: ShopGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3544149407223587590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1336,8 @@ GameObject:
   - component: {fileID: 3544149407458674920}
   - component: {fileID: 3544149407458674921}
   - component: {fileID: 3544149407458674923}
-  - component: {fileID: 3544149407458674922}
+  - component: {fileID: 132373095}
+  - component: {fileID: 132373100}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1339,7 +1352,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3544149407458674927}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1405,7 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b50f05a3386a1428495dc2ba458be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3544149407458674922
+--- !u!114 &132373095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1414,9 +1427,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3544149407458674927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20778d44a1371d4193a71e3e217d3b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ebfe51107bc66c44a3df3e332c79a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &132373100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544149407458674927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8903ac2d1358b3449c47abc1a7f7e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageMenu: 1
 --- !u!1 &3544149407494061772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2164,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3544149408026983786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 132373095}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3544149408070625373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,7 +2546,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3544149408236646886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 132373095}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: SettingsGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3544149408506512195
 GameObject:
   m_ObjectHideFlags: 0
