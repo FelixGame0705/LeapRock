@@ -21,12 +21,25 @@ namespace Entity
 
         }
 
+        public override void OnHandler()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public override void UpdateSate()
         {
             _time -= Time.deltaTime;
             if (_time <=0f)
             {
                 _stateActionComponent.SwitchState(_stateActionComponent.GetSateAction("Jump"));
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                _stateActionComponent.SwitchState(_stateActionComponent.GetSateAction("MoveRight"));
+            }
+            if(Input.GetKey(KeyCode.A))
+            {
+                _stateActionComponent.SwitchState(_stateActionComponent.GetSateAction("MoveLeft"));
             }
         }
 
