@@ -9,11 +9,13 @@ namespace Character
         {
             _stateActions.Add("Idle", new FrogIdle(enityControl));
             _stateActions.Add("Jump", new FrogJump(enityControl, _trajectoryJump));
+            _stateActions.Add("MoveRight", new FrogMoveRight(enityControl));
+            _stateActions.Add("MoveLeft", new FrogMoveLeft(enityControl));
         }
 
         private void Start()
         {
-            SwitchState(GetSateAction("Idle"));
+            SwitchState(GetSateAction("Jump"));
         }
 
         private void Update()

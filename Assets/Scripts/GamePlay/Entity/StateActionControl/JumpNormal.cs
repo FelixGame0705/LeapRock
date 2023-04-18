@@ -48,17 +48,21 @@ namespace Entity
                 nextPosition = transformComponent.GetNextTransform().position + Vector3.up;
                 none = transform.position;
                 x = 0;
+                transformComponent.SetCurrentTransform(transformComponent.GetNextTransform());
                 isSetupValue = false;
-                //Debug.Log(transform.position + " And " + nextPosition);
             }
         }
 
         void OnEndJump()
         {
-            transformComponent.SetCurrentTransform(transformComponent.GetNextTransform());
             Map.MapControl.Instance.SpawnNext(transformComponent._currentTransform);
             isSetupValue = true;
             action.Invoke();
+        }
+
+        void SetCurrentTransform()
+        {
+
         }
     }
 }
