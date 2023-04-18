@@ -2,6 +2,7 @@ using FusionExamples.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -9,14 +10,22 @@ public class LevelManager : Singleton<LevelManager>
     
     public void UpdateLevel(int level)
     {
-        
+        ResetLevel();
+        int levelcount = 1;
+        foreach (GameObject levelEntity in list)
+        {
+            var imageEntity = levelEntity.GetComponent<Image>();
+            imageEntity.color = Color.yellow;
+            if(levelco)
+        }
     }
 
-    private void ResetShop()
+    private void ResetLevel()
     {
-       foreach(GameObject levelList in list)
+       foreach(GameObject levelEntity in list)
        {
-
+            var imageEntity = levelEntity.GetComponent<Image>();
+            imageEntity.color = Color.gray;
        }
     }
 }
